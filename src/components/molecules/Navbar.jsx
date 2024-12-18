@@ -6,13 +6,13 @@ const Navbar = () => {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    backgroundColor: '#004d00', // Verde oscuro
+    backgroundColor: '#fff', // Verde oscuro
     padding: '10px 20px',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
   };
 
   const linkStyles = {
-    color: '#ffffff',
+    color: '#000',
     textDecoration: 'none',
     margin: '0 10px',
     fontSize: '1rem',
