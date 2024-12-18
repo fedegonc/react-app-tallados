@@ -1,14 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 import Button from './components/atoms/Button';
-import Navbar from './components/molecules/Navbar';
+import Header from './components/organisms/Header';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {/* Navbar */}
-      <Navbar />
+      
+      <Header />
+
+        {/* Navbar */} 
+        
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save hola mundo este es el gato de shrodinger to reload.
@@ -22,7 +24,7 @@ function App() {
         >
           Learn React
         </a>
-      </header>
+      
     </div>
   );
 }
