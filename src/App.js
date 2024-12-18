@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import Button from './components/atoms/Button';
+
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save hola mundo este es el gato de shrodinger to reload.
         </p>
+        <Button label="Click Me" onClick={() => alert('Button Clicked!')} />
         <a
           className="App-link"
           href="https://reactjs.org"
