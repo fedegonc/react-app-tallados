@@ -5,13 +5,16 @@ const Button = ({ label, onClick }) => {
 
   const buttonStyles = {
     padding: '10px 20px',
-    backgroundColor: isHovered ? '#FFFFFF' : '#000000', // Cambio de color al hacer hover
-    color:  isHovered ? '#000000' : '#FFFFFF',
-    border: '2px solidrgb(0, 0, 0)',
-    borderRadius: '5px',
+    backgroundColor: isHovered ? '#3A4A3A' : '#4A5D4E', // Verde más oscuro al hacer hover
+    color: '#FFFFFF', // Texto blanco siempre
+    border: '2px solid #3A4A3A', // Borde sutil
+    borderRadius: '8px', // Bordes suavemente redondeados
     cursor: 'pointer',
     transition: 'all 0.3s ease',
-    transform: isHovered ? 'scale(1.05)' : 'scale(1)',
+    transform: isHovered ? 'scale(1.05)' : 'scale(1)', // Aumenta ligeramente
+    boxShadow: isHovered
+      ? '0 4px 6px rgba(0, 0, 0, 0.2)'
+      : '0 2px 4px rgba(0, 0, 0, 0.1)', // Sombra al hacer hover
   };
 
   return (
