@@ -51,21 +51,28 @@ const HomePage = () => {
 
       {/* Sección de Tarjetas */}
       <div style={cardContainerStyles}>
-        <CardComponent
-          imageSrc="https://via.placeholder.com/300x180"
-          title="Tallado en Madera"
-          description="Descubre piezas únicas trabajadas a mano con detalle y pasión."
-          buttonLabel="Ver detalles"
-          onButtonClick={() => alert('Detalles de la tarjeta')}
-        />
-        <CardComponent
-          imageSrc="https://via.placeholder.com/300x180"
-          title="Proyectos Especiales"
-          description="Personalizamos proyectos de tallado según tus necesidades."
-          buttonLabel="Explorar"
-          onButtonClick={() => alert('Explorar proyectos')}
-        />
-      </div>
+  <CardComponent
+    imageSrc="https://via.placeholder.com/300x180"
+    title="Tallado en Madera"
+    description="Descubre piezas únicas trabajadas a mano con detalle y pasión."
+    buttonLabel="Ver detalles"
+    onButtonClick={() => alert('Detalles de la tarjeta')}
+  />
+  <CardComponent
+    imageSrc="https://via.placeholder.com/300x180"
+    title="Proyectos Especiales"
+    description="Personalizamos proyectos de tallado según tus necesidades."
+    buttonLabel="Explorar"
+    onButtonClick={() => alert('Explorar proyectos')}
+  />
+  <CardComponent
+    imageSrc="https://via.placeholder.com/300x180"
+    title="Decoraciones"
+    description="Adorna tu hogar con piezas exclusivas de madera tallada."
+    buttonLabel="Ver más"
+    onButtonClick={() => alert('Ver más')}
+  />
+</div>
     </MainTemplate>
   );
 };
