@@ -14,7 +14,7 @@ const Menu = ({ isOpen, options, onOptionClick }) => {
     overflow: 'hidden',
     textAlign: 'left',
     fontFamily: 'Merriweather, serif',
-    transform: isOpen ? 'scaleY(1)' : 'scaleY(0)', // Escalado vertical
+    transform: isOpen ? 'scaleY(1.1)' : 'scaleY(0)', // Escalado vertical
     transformOrigin: 'top', // La animación se origina desde la parte superior
     transition: 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.5s ease', // Transición más lenta y suave
     opacity: isOpen ? 1 : 0, // Asegura que desaparezca visualmente cuando está cerrado
