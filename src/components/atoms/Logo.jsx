@@ -23,7 +23,7 @@ const Logo = () => {
       onMouseEnter={() => setIsHovered(true)} // Activa hover
       onMouseLeave={() => setIsHovered(false)} // Desactiva hover
     >
-      Riverpod Tallados
+      Provider Austral
     </div>
   );
 };

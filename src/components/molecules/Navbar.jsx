@@ -12,12 +12,12 @@ const Navbar = () => {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '15px 30px',
+    padding: '0 30px', // Ajuste vertical eliminado
+    height: '70px', // Fija la altura para evitar inconsistencias
     zIndex: 1000,
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
     backdropFilter: 'blur(10px)',
-    fontFamily: 'Merriweather, serif',
-  };
+};
 
   const handleMenuToggle = () => setMenuOpen(!menuOpen);
   const handleOptionClick = (option) => alert(`Seleccionaste: ${option}`);

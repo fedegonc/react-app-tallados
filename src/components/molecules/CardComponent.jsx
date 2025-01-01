@@ -1,5 +1,7 @@
+// CardComponent.jsx
 import React from 'react';
-import Button from '../atoms/Button';
+import ImageAtom from '../atoms/ImageAtom';
+import ContentMolecule from '../molecules/ContentMolecule';
 
 const CardComponent = ({ imageSrc, title, description, buttonLabel, onButtonClick }) => {
   const cardStyles = {
@@ -11,8 +13,6 @@ const CardComponent = ({ imageSrc, title, description, buttonLabel, onButtonClic
     backgroundColor: '#ffffff',
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'flex-start',
-    gap: '10px',
   };
 
   const imageStyles = {
@@ -28,33 +28,16 @@ const CardComponent = ({ imageSrc, title, description, buttonLabel, onButtonClic
     gap: '10px',
   };
 
-  const titleStyles = {
-    fontSize: '1.5rem',
-    fontWeight: 'bold',
-    color: '#333333',
-    margin: 0,
-  };
-
-  const descriptionStyles = {
-    fontSize: '1rem',
-    color: '#555555',
-    margin: 0,
-    lineHeight: '1.4',
-  };
-
   return (
     <div style={cardStyles}>
-      {/* Imagen */}
-      <img src={imageSrc} alt={title} style={imageStyles} />
-
-      {/* Contenido */}
-      <div style={contentStyles}>
-        <h3 style={titleStyles}>{title}</h3>
-        <p style={descriptionStyles}>{description}</p>
-
-        {/* Botón */}
-        <Button label={buttonLabel} onClick={onButtonClick} />
-      </div>
+      <ImageAtom src={imageSrc} alt={title} styles={imageStyles} />
+      <ContentMolecule
+        title={title}
+        description={description}
+        buttonLabel={buttonLabel}
+        onButtonClick={onButtonClick}
+        styles={contentStyles}
+      />
     </div>
   );
 };
