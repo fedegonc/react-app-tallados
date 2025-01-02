@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../molecules/Navbar';
+import Navbar from '../organisms/Navbar';
 
 const MainTemplate = ({ children }) => {
   // Define la altura fija del Navbar
@@ -9,14 +9,8 @@ const MainTemplate = ({ children }) => {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-    backgroundColor: '#4A5D4E', // Fondo principal
+    backgroundColor: '#C0C0C0', // Cambiado a gris
     color: '#FFFFFF',
-  };
-
-  const navbarBorderStyles = {
-    height: '4px', // Altura de la línea
-    backgroundColor: '#2C2C2C', // Color oscuro para la línea
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)', // Sombra sutil
   };
 
   const mainStyles = {
@@ -35,14 +29,12 @@ const MainTemplate = ({ children }) => {
     color: '#E8D8C3',
     padding: '20px 0', // Espaciado generoso
     textAlign: 'center',
-    borderTop: '4px solid #4A5D4E', // Línea en la parte superior del footer
+    borderTop: '4px solid #C0C0C0', // Línea en la parte superior del footer
   };
 
   return (
     <div style={containerStyles}>
-      {/* Header */}
       <Navbar />
-      <div style={navbarBorderStyles}></div> {/* Línea oscura debajo del Navbar */}
 
       {/* Contenido dinámico */}
       <main style={mainStyles}>{children}</main>

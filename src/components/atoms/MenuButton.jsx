@@ -1,29 +1,20 @@
-import React from 'react';
+import React from "react";
 
-const MenuButton = ({ onClick }) => {
-  const menuButtonStyles = {
-    backgroundColor: 'transparent',
-    border: 'none',
-    color: '#FFFFFF',
-    fontSize: '1.5rem',
-    cursor: 'pointer',
-    display: 'flex',
-    alignItems: 'center', // Centra verticalmente
-    gap: '5px',
-    fontFamily: 'inherit', 
+const MenuButton = ({ label, onClick }) => {
+  const buttonStyles = {
+    margin: "10px 0",
+    color: "#FFFFFF",
+    backgroundColor: "transparent",
+    border: "none",
+    fontSize: "1rem",
+    cursor: "pointer",
+    textAlign: "left",
+    padding: "5px 0",
   };
-
-  const textStyles = {
-    display: 'flex',
-    alignItems: 'center',
-    lineHeight: '1', // Asegura altura de línea uniforme
-  };
-
-;
 
   return (
-    <button style={menuButtonStyles} onClick={onClick}>
-      <span style={textStyles}>Menu</span>
+    <button style={buttonStyles} onClick={onClick}>
+      {label}
     </button>
   );
 };

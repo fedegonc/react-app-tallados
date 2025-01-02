@@ -1,42 +1,52 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from "react";
+import MenuToggle from "../atoms/MenuToggle";
+import MenuList from "../atoms/MenuList";
 
-const Menu = ({ isOpen, options, onOptionClick }) => {
-  const menuContainerStyles = {
-    position: 'absolute',
-    top: '60px',
-    right: '15px',
-    backgroundColor: '#2C2C2C',
-    color: '#FFFFFF',
-    width: '200px',
-    borderRadius: '5px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.2)',
-    overflow: 'hidden',
-    textAlign: 'left',
-    fontFamily: 'Merriweather, serif',
-    transition: 'height 0.5s ease, opacity 0.5s ease', // Animación suave para altura y opacidad
-    height: isOpen ? '150px' : '0px', // Despliega/oculta ajustando la altura
-    opacity: isOpen ? 1 : 0, // Oculta visualmente cuando está cerrado
-    visibility: isOpen ? 'visible' : 'hidden', // Asegura que no interfiera con el diseño cerrado
+const Menu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  // Cerrar menú al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  const handleOptionClick = (option) => {
+    alert(`Seleccionaste: ${option}`);
+    setIsOpen(false); // Cierra el menú
   };
 
-  const optionStyles = {
-    padding: '10px',
-    cursor: 'pointer',
-    borderBottom: '1px solid #444',
-    transition: 'background-color 0.3s ease',
+  const menuStyles = {
+    position: "absolute",
+    top: "70px",
+    right: "0",
+    backgroundColor: "#2C2C2C",
+    color: "#FFFFFF",
+    padding: "10px",
+    borderRadius: "5px",
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
+    display: isOpen ? "block" : "none",
+    minWidth: "150px",
   };
 
   return (
-    <div style={menuContainerStyles}>
-      {options.map((option, index) => (
-        <div
-          key={index}
-          style={optionStyles}
-          onClick={() => onOptionClick(option)}
-        >
-          {option}
-        </div>
-      ))}
+    <div ref={menuRef}>
+      <MenuToggle onClick={() => setIsOpen(!isOpen)} />
+
+      {/* Opciones del menú usando MenuList */}
+      <div style={menuStyles}>
+        <MenuList
+          items={["Inicio", "Servicios", "Contacto"]}
+          onItemClick={handleOptionClick}
+        />
+      </div>
     </div>
   );
 };

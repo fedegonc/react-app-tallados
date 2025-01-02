@@ -1,5 +1,6 @@
 import React from "react";
 import Colors from "../atoms/Colors"; // Asegúrate de que esta ruta sea correcta
+import Navbar from '../organisms/Navbar';
 
 const ComponentsPreview = () => {
   return (
@@ -30,7 +31,9 @@ const ComponentsPreview = () => {
             </div>
           ))}
         </div>
+        <Navbar />
       </section>
+
     </div>
   );
 };
