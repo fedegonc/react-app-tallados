@@ -23,7 +23,8 @@ const Logo = () => {
       onMouseEnter={() => setIsHovered(true)} // Activa hover
       onMouseLeave={() => setIsHovered(false)} // Desactiva hover
     >
-      Provider Austral
+      
+      Sonido del Río
     </div>
   );
 };
