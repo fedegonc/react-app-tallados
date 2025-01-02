@@ -19,17 +19,11 @@ const MenuButton = ({ onClick }) => {
     lineHeight: '1', // Asegura altura de línea uniforme
   };
 
-  const dotStyles = {
-    fontSize: '1.5rem', // Asegúrate de que el tamaño de fuente sea el mismo
-    display: 'flex',
-    alignItems: 'center',
-    lineHeight: '1',
-  };
+;
 
   return (
     <button style={menuButtonStyles} onClick={onClick}>
       <span style={textStyles}>Menu</span>
-      <span style={dotStyles}>⋮</span> {/* Tres puntos verticales */}
     </button>
   );
 };
