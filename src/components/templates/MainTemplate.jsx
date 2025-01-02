@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../organisms/Header';
+import Navbar from '../molecules/Navbar';
 
 const MainTemplate = ({ children }) => {
   // Define la altura fija del Navbar
@@ -41,7 +41,7 @@ const MainTemplate = ({ children }) => {
   return (
     <div style={containerStyles}>
       {/* Header */}
-      <Header />
+      <Navbar />
       <div style={navbarBorderStyles}></div> {/* Línea oscura debajo del Navbar */}
 
       {/* Contenido dinámico */}

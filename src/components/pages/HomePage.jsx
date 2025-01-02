@@ -1,7 +1,7 @@
 import React from 'react';
 import MainTemplate from '../templates/MainTemplate';
 import Button from '../atoms/Button';
-import CardComponent from '../molecules/CardComponent';
+
 
 const HomePage = () => {
   const containerStyles = {
@@ -37,14 +37,7 @@ const HomePage = () => {
     gap: '20px',
     marginTop: '40px',
   };
-
-  const cardStyles = {
-    flex: '1 1 calc(33.333% - 20px)', // flex-grow: 1, base: 33.3% menos el gap
-    minWidth: '250px', // Evita que las tarjetas sean demasiado pequeñas
-    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
-    borderRadius: '10px',
-    backgroundColor: '#FFFFFF',
-  };
+;
 
   return (
     <MainTemplate>
@@ -59,33 +52,8 @@ const HomePage = () => {
 
       {/* Sección de Tarjetas */}
       <div style={cardContainerStyles}>
-        <div style={cardStyles}>
-          <CardComponent
-            imageSrc="https://via.placeholder.com/300x180"
-            title="Tallado en Madera"
-            description="Descubre piezas únicas trabajadas a mano con detalle y pasión."
-            buttonLabel="Ver detalles"
-            onButtonClick={() => alert('Detalles de la tarjeta')}
-          />
-        </div>
-        <div style={cardStyles}>
-          <CardComponent
-            imageSrc="https://via.placeholder.com/300x180"
-            title="Proyectos Especiales"
-            description="Personalizamos proyectos de tallado según tus necesidades."
-            buttonLabel="Explorar"
-            onButtonClick={() => alert('Explorar proyectos')}
-          />
-        </div>
-        <div style={cardStyles}>
-          <CardComponent
-            imageSrc="https://via.placeholder.com/300x180"
-            title="Decoraciones"
-            description="Adorna tu hogar con piezas exclusivas de madera tallada."
-            buttonLabel="Ver más"
-            onButtonClick={() => alert('Ver más')}
-          />
-        </div>
+        
+       
       </div>
     </MainTemplate>
   );

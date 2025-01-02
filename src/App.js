@@ -1,18 +1,22 @@
-import logo from './logo.svg';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
-import Button from './components/atoms/Button';
-import Header from './components/organisms/Header';
 import HomePage from './components/pages/HomePage';
+import ComponentsPreview from './components/pages/ComponentsPreview';
+
 
 function App() {
   return (
-    <div className="App">
-      
-      
-        <HomePage />
-        
-      
-    </div>
+    <Router>
+      <div className="App">
+       
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/preview" element={<ComponentsPreview />} />
+          
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
