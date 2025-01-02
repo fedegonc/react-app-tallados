@@ -43,7 +43,12 @@ const Menu = () => {
       {/* Opciones del menú usando MenuList */}
       <div style={menuStyles}>
         <MenuList
-          items={["Inicio", "Servicios", "Contacto"]}
+          items={[
+            
+            "Inicio", 
+            "Servicios", 
+            "Contacto"
+        ]}
           onItemClick={handleOptionClick}
         />
       </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../atoms/Logo"; // Reutilizando el átomo Logo
+import Logo from "../atoms/Logo"; 
 import Menu from "../molecules/Menu";
 
 const Navbar = () => {
