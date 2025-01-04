@@ -50,7 +50,7 @@ const Banner = () => {
         borderRadius: "5px",
         fontSize: "1rem",
         cursor: "pointer",
-        textShadow: "1px 1px 2px rgba(0, 0, 0, 0.5)",
+        textShadow: "1px 1px 2px rgba(0, 0, 0, 0.2)",
         transition: "background-color 0.3s ease",
     };
 
@@ -65,7 +65,7 @@ const Banner = () => {
             {/* Contenido */}
             <div style={contentStyle}>
                 <div style={textStyle}>
-                    Plantamos un árbol por cada tallado que hacemos
+                    Plantamos un árbol <br/>por  cada tallado que hacemos
                 </div>
                 <button
                     style={buttonStyle}
