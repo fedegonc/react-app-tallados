@@ -14,9 +14,11 @@ const Banner = () => {
         alignItems: "center",
         paddingLeft: "20px",
         color: "#ffffff",
-        fontSize: "2rem",
+        fontSize: "2.5rem", // Tamaño un poco mayor para destacar
         fontWeight: "bold",
-        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
+        textShadow: `
+            3px 3px 0px rgba(0, 0, 0, 0.6), 
+            6px 6px 0px rgba(0, 0, 0, 0.3)`, // Sombra de bloque más notable
         fontFamily: Letras.textFont,
     };
 

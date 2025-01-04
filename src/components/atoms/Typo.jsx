@@ -1,6 +1,6 @@
 const Letras = {
-    logoFont: "'Alkatra', serif", // Fuente para el logo
-    textFont: "'Alkatra', serif", // Fuente para el texto general
+    logoFont: "'Encode Sans Expanded', serif", // Fuente para el logo
+    textFont: "'Encode Sans Expanded', serif", // Fuente para el texto general
   };
   
   export default Letras;
