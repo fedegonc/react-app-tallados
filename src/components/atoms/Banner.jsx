@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import Letras from "../atoms/Typo";
 
 const Banner = () => {
     const bannerStyle = {
@@ -16,14 +17,14 @@ const Banner = () => {
         fontSize: "2rem",
         fontWeight: "bold",
         textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
-        marginTop: "0", // Asegúrate de que no haya margen superior
-      };
+        fontFamily: Letras.textFont,
+    };
 
-  return (
-    <div style={bannerStyle}>
-      Welcome to the Banner!
-    </div>
-  );
+    return (
+        <div style={bannerStyle}>
+            Plantamos un árbol por cada tallado que hacemos
+        </div>
+    );
 };
 
 export default Banner;

@@ -7,7 +7,7 @@ const MainTemplate = ({ children }) => {
     display: "flex",
     flexDirection: "column",
     minHeight: "100vh",
-    backgroundColor: "#FEFEFE",
+    backgroundColor: "#000",
     margin: 0, // Añadir para asegurarse de que no hay margen
     padding: 0,
   };

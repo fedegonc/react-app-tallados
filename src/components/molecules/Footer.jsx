@@ -2,16 +2,62 @@ import React from "react";
 
 const Footer = () => {
   const footerStyles = {
-    backgroundColor: "#2C2C2C",
-    color: "#E8D8C3",
-    padding: "20px 0", // Espaciado generoso
-    textAlign: "center",
-    borderTop: "4px solid #C0C0C0", // Línea en la parte superior del footer
+    background: "linear-gradient(90deg, #2C2C2C, #3E3E3E)", // Fondo degradado
+    color: "#ffffff", // Texto blanco para contraste
+    padding: "20px", // Espaciado generoso
+    textAlign: "center", // Centrar contenido
+    fontSize: "0.9rem", // Tamaño de fuente más pequeño y moderno
+    borderTop: "1px solid #4D4D4D", // Línea sutil en la parte superior
+  };
+
+  const socialIconsStyles = {
+    marginTop: "10px",
+    display: "flex",
+    justifyContent: "center",
+    gap: "15px",
+  };
+
+  const iconStyles = {
+    color: "#ffffff",
+    fontSize: "1.2rem",
+    textDecoration: "none",
+    transition: "color 0.3s ease",
+  };
+
+  const iconHoverStyles = {
+    color: "#76C893", // Color de hover (puedes ajustarlo)
   };
 
   return (
     <footer style={footerStyles}>
-      <p>&copy; 2024 Tallado Colonial. All rights reserved.</p>
+      <p>Desarrollado por Federico Goncalvez</p>
+      {/* Íconos de redes sociales */}
+      <div style={socialIconsStyles}>
+        <a
+          href="https://twitter.com"
+          style={iconStyles}
+          onMouseEnter={(e) => (e.target.style.color = iconHoverStyles.color)}
+          onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
+        >
+          <i className="fab fa-twitter"></i>
+        </a>
+        <a
+          href="https://github.com"
+          style={iconStyles}
+          onMouseEnter={(e) => (e.target.style.color = iconHoverStyles.color)}
+          onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
+        >
+          <i className="fab fa-github"></i>
+        </a>
+        <a
+          href="https://linkedin.com"
+          style={iconStyles}
+          onMouseEnter={(e) => (e.target.style.color = iconHoverStyles.color)}
+          onMouseLeave={(e) => (e.target.style.color = "#ffffff")}
+        >
+          <i className="fab fa-linkedin"></i>
+        </a>
+      </div>
     </footer>
   );
 };

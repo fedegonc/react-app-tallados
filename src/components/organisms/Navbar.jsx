@@ -8,7 +8,7 @@ const Navbar = () => {
     top: 0,
     left: 0,
     width: "100%",
-    backgroundColor: "rgba(44, 44, 44, 0.8)", // Semitransparente
+    backgroundColor: "rgba(0, 50, 0, 0.3)", // Semitransparente
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",

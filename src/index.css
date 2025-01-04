@@ -1,12 +1,7 @@
 body {
-  font-family: 'Merriweather', serif; /* Usa la fuente integrada desde index.html */
+  font-family: 'Open Sans', sans-serif; /* Fuente base para el resto de la página */
   margin: 0; /* Elimina márgenes por defecto */
   padding: 0; /* Elimina padding por defecto */
   box-sizing: border-box; /* Asegura un box-model consistente */
   color: #2C2C2C; /* Color de texto base */
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
