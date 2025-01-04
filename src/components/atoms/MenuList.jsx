@@ -19,10 +19,7 @@ const MenuList = ({ items = [], onItemClick }) => {
     backgroundColor: "transparent",
   };
 
-  const listItemHoverStyles = {
-    ...listItemStyles,
-    backgroundColor: "#444",
-  };
+ 
 
   return (
     <ul style={listStyles}>

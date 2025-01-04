@@ -1,5 +1,5 @@
 import React from "react";
-import Colors from "../atoms/Colors"; // Asegúrate de que esta ruta sea correcta
+import Colors from "../atoms/Colors"; 
 import Navbar from '../organisms/Navbar';
 
 const ComponentsPreview = () => {
