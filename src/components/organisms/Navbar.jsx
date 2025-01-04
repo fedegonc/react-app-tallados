@@ -4,16 +4,19 @@ import Menu from "../molecules/Menu";
 
 const Navbar = () => {
   const navbarStyles = {
-    position: "relative",
-    backgroundColor: "rgba(44, 44, 44, 0.8)",
+    position: "absolute", // Cambiado a 'absolute' para superponerse al fondo
+    top: 0,
+    left: 0,
+    width: "100%",
+    backgroundColor: "rgba(44, 44, 44, 0.8)", // Semitransparente
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     padding: "0 30px",
     height: "70px",
-    zIndex: 1000,
+    zIndex: 1000, // Asegura que esté encima de otros elementos
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
-    backdropFilter: "blur(10px)",
+    backdropFilter: "blur(10px)", // Efecto de desenfoque
   };
 
   return (

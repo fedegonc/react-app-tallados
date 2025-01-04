@@ -5,14 +5,16 @@ import Footer from "../molecules/Footer";
 const MainTemplate = ({ children }) => {
   const templateStyles = {
     display: "flex",
-    flexDirection: "column", // Cambiado a columna para jerarquía Navbar → Main → Footer
-    minHeight: "100vh", // Asegura que ocupe toda la pantalla
-    backgroundColor: "#FEFEFE", // Fondo gris claro casi blanco
+    flexDirection: "column",
+    minHeight: "100vh",
+    backgroundColor: "#FEFEFE",
+    margin: 0, // Añadir para asegurarse de que no hay margen
+    padding: 0,
   };
 
   const mainStyles = {
     flex: 1, // Permite que el contenido dinámico ocupe el espacio disponible
-    padding: "20px", // Espaciado interno del contenido dinámico
+    padding: "0", // Espaciado interno del contenido dinámico
   };
 
   return (

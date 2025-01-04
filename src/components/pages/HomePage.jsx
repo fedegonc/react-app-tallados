@@ -34,7 +34,7 @@ const HomePage = () => {
       {/* Banner debajo del Navbar */}
       <Banner />
 
-      {/* Contenido principal */}
+      {/* Contenido principal 
       <div style={{ display: "flex" }}>
         <div style={{ flex: 1 }}>
           <MainTitle />
@@ -42,7 +42,7 @@ const HomePage = () => {
         <div style={{ flex: 1 }}>
           <ContactForm />
         </div>
-      </div>
+      </div>*/}
     </MainTemplate>
   );
 };
