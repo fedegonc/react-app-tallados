@@ -15,6 +15,8 @@ const HomePage = () => {
 
       <Values />
 
+       <Values />
+
     </MainTemplate>
   );
 };
