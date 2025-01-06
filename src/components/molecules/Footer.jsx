@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   const footerStyles = {
     background: "linear-gradient(90deg, #2C2C2C, #0E0E0E)", // Fondo degradado
-    color: "#ffffff", // Texto blanco para contraste
+    color: "#9f9f9f", // Texto blanco para contraste
     padding: "20px", // Espaciado generoso
     textAlign: "center", // Centrar contenido
     fontSize: "0.9rem", // Tamaño de fuente más pequeño y moderno
