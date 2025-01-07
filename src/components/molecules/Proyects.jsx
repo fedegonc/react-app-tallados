@@ -70,4 +70,4 @@ const Values = () => {
     );
 };
 
-export default Values;
+export default Proyects;
