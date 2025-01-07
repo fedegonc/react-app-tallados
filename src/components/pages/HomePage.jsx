@@ -13,7 +13,7 @@ const HomePage = () => {
       
       <Banner />
 
-      <Cards />
+      <Card />
 
       
 
