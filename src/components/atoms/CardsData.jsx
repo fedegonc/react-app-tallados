@@ -1,5 +1,3 @@
-import React from "react";
-
 const cardsData = [
     {
         icon: "fas fa-seedling",
@@ -20,23 +18,23 @@ const cardsData = [
             "Ofrecemos opciones personalizadas para reflejar tu estilo y personalidad.",
     },
     {
-        icon: "fas fa-leaf",
+        icon: "fas fa-code",
         title: "Innovación",
         description:
-            "Estamos constantemente explorando nuevas formas de combinar tradición y modernidad.",
+            "Creemos en la creatividad constante para desarrollar soluciones únicas.",
     },
     {
-        icon: "fas fa-heart",
-        title: "Pasión",
+        icon: "fas fa-laptop",
+        title: "Tecnología",
         description:
-            "Ponemos el corazón en cada detalle, asegurando que cada pieza cuente una historia única.",
+            "Integramos tecnología avanzada para mejorar nuestros productos y servicios.",
     },
     {
         icon: "fas fa-star",
-        title: "Calidad",
+        title: "Excelencia",
         description:
-            "Utilizamos materiales y procesos de alta calidad para garantizar productos duraderos y excepcionales.",
+            "Nuestro compromiso es brindar productos de la más alta calidad.",
     },
 ];
 
-export default CardsData;
+export default cardsData;
