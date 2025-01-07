@@ -1,7 +1,9 @@
 import React from "react";
 import MainTemplate from "../templates/MainTemplate";
 import Banner from "../atoms/Banner";
-import Values from "../molecules/Values";
+import Card from "../atoms/Card";
+
+
 
 
 
@@ -14,8 +16,6 @@ const HomePage = () => {
       <Banner />
 
       <Card />
-
-      
 
     </MainTemplate>
   );
