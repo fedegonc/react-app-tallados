@@ -13,9 +13,9 @@ const HomePage = () => {
       
       <Banner />
 
-      <Values />
+      <Cards />
 
-       <Values />
+      
 
     </MainTemplate>
   );
