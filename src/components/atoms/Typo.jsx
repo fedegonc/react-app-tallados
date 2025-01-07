@@ -1,5 +1,5 @@
 const Letras = {
-    logoFont: "'Protest Revolution', serif", // Fuente para el logo
+    logoFont: "'Qwigley', serif", // Fuente para el logo
     textFont: "'Protest Revolution', serif", // Fuente para el texto general
   };
   

@@ -5,10 +5,10 @@ const Logo = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   const styles = {
-    fontSize: "2rem", // Tamaño del texto
+    fontSize: "2.5rem", // Tamaño del texto
     fontWeight: "900", // Extra-bold para impacto
-    color: isHovered ? "#000000" : "#ffffff", // Negro por defecto, blanco en hover
-    backgroundColor: isHovered ? "#ffffff" : "transparent", // Fondo negro solo en hover
+    color: isHovered ? "#fff" : "#eee", // Negro por defecto, blanco en hover
+    backgroundColor: isHovered ? "#5555" : "transparent", // Fondo negro solo en hover
     padding: "5px 10px", // Espaciado interno
     fontFamily: Letras.logoFont, // Fuente definida en el átomo Letras
     letterSpacing: "3px", // Espaciado entre letras
@@ -17,14 +17,14 @@ const Logo = () => {
     display: "inline-block", // Tamaño ajustado al contenido
     borderRadius: "2px", // Bordes ligeramente redondeados
   };
-
+  
   return (
     <div
       style={styles}
       onMouseEnter={() => setIsHovered(true)} // Activa hover
       onMouseLeave={() => setIsHovered(false)} // Desactiva hover
     >
-      EcoTallados
+      La Cabaña del Tallado
     </div>
   );
 };
