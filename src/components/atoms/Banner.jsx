@@ -10,10 +10,9 @@ const Banner = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         position: "relative",
-        display: "flex", // Usar Flexbox
-        justifyContent: "flex-start", // Alinear horizontalmente a la izquierda
-        alignItems: "center", // Centrar verticalmente
-        paddingLeft: "40px", // Espaciado desde el borde izquierdo
+        display: "flex",
+        alignItems: "center",
+        padding: "0 20px", // Ajustar padding en móviles
     };
 
     const overlayStyle = {
