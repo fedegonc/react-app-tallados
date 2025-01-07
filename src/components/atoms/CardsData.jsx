@@ -1,39 +1,39 @@
+// CardsData.js
 const cardsData = [
     {
         icon: "fas fa-seedling",
         title: "Sostenibilidad",
-        description:
-            "Cada tallado contribuye a reforestar nuestro planeta, plantando un árbol por cada pieza creada.",
+        description: "Cada tallado contribuye a reforestar nuestro planeta, plantando un árbol por cada pieza creada.",
     },
     {
         icon: "fas fa-hands",
         title: "Artesanía",
-        description:
-            "Diseños únicos y personalizados, hechos a mano con materiales de calidad.",
+        description: "Diseños únicos y personalizados, hechos a mano con materiales de calidad.",
     },
     {
         icon: "fas fa-palette",
         title: "Personalización",
-        description:
-            "Ofrecemos opciones personalizadas para reflejar tu estilo y personalidad.",
+        description: "Ofrecemos opciones personalizadas para reflejar tu estilo y personalidad.",
     },
     {
-        icon: "fas fa-code",
-        title: "Innovación",
-        description:
-            "Creemos en la creatividad constante para desarrollar soluciones únicas.",
+        icon: "fas fa-project-diagram",
+        title: "Proyecto 1",
+        description: "Descripción del proyecto 1.",
     },
     {
-        icon: "fas fa-laptop",
-        title: "Tecnología",
-        description:
-            "Integramos tecnología avanzada para mejorar nuestros productos y servicios.",
+        icon: "fas fa-tools",
+        title: "Proyecto 2",
+        description: "Descripción del proyecto 2.",
     },
     {
-        icon: "fas fa-star",
-        title: "Excelencia",
-        description:
-            "Nuestro compromiso es brindar productos de la más alta calidad.",
+        icon: "fas fa-chart-line",
+        title: "Proyecto 3",
+        description: "Descripción del proyecto 3.",
+    },
+    {
+        icon: "fas fa-chart-line",
+        title: "Proyecto 3",
+        description: "Descripción del proyecto 3.",
     },
 ];
 

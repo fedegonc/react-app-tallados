@@ -1,6 +1,8 @@
+// Card.js
 import React from "react";
+import cardsData from "./CardsData";
 
-const Card = ({ icon, title, description }) => {
+const Card = () => {
     const cardStyle = {
         textAlign: "center",
         width: "300px",
@@ -16,21 +18,25 @@ const Card = ({ icon, title, description }) => {
     const titleStyle = {
         fontSize: "1.5rem",
         fontWeight: "bold",
-        color: "#333",
+        color: "#aaa",
         marginBottom: "10px",
     };
 
     const descriptionStyle = {
         fontSize: "1rem",
-        color: "#555",
+        color: "#eee",
         lineHeight: "1.6",
     };
 
     return (
-        <div style={cardStyle}>
-            <i className={icon} style={iconStyle}></i>
-            <h3 style={titleStyle}>{title}</h3>
-            <p style={descriptionStyle}>{description}</p>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+            {cardsData.map((card, index) => (
+                <div key={index} style={cardStyle}>
+                    <i className={card.icon} style={iconStyle}></i>
+                    <h3 style={titleStyle}>{card.title}</h3>
+                    <p style={descriptionStyle}>{card.description}</p>
+                </div>
+            ))}
         </div>
     );
 };
