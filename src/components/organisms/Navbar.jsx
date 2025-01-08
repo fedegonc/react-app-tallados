@@ -26,7 +26,7 @@ const Navbar = () => {
     top: 0,
     left: 0,
     width: "100%",
-    backgroundColor: "rgba(0, 50, 0, 0.3)", // Semitransparente
+    backgroundColor: "rgba(0, 50, 0, 0.2)", // Semitransparente
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
