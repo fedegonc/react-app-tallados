@@ -26,7 +26,7 @@ const useResponsiveStyles = (isHovered) => {
     };
 };
 
-const ResponsiveComponent = () => {
+const Logo = () => {
     const [isHovered, setIsHovered] = useState(false);
     const styles = useResponsiveStyles(isHovered);
 
@@ -36,9 +36,9 @@ const ResponsiveComponent = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            EcoTallados
+            {Letras.logoText}
         </div>
     );
 };
 
-export default ResponsiveComponent;
+export default Logo;
