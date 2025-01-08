@@ -12,7 +12,7 @@ const useResponsiveStyles = (isHovered) => {
     }, []);
 
     return {
-        fontSize: isMobile ? "1.8rem" : "2.5rem", // Cambiar tamaño según pantalla
+         // Cambiar tamaño según pantalla
         fontWeight: "500",
         color: isHovered ? "#fff" : "#eee",
         backgroundColor: isHovered ? "#555" : "transparent",
