@@ -3,7 +3,7 @@ const cardsData = [
     {
         icon: "fas fa-seedling",
         title: "Sostenibilidad",
-        description: "Cada tallado contribuye a reforestar nuestro planeta, plantando un árbol por cada pieza creada.",
+        description: "Somos concientes del impacto de la deforestación, por eso apostamos a un uso racional y solo utilizar el material necesario, evitando modelos industriales o sobreexplotación.",
     },
     {
         icon: "fas fa-hands",
