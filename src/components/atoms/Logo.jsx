@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Letras from '../atoms/Typo';
+import Typo from '../atoms/Typo';
 
 
 const useResponsiveStyles = (isHovered) => {
@@ -13,11 +13,11 @@ const useResponsiveStyles = (isHovered) => {
 
     return {
         fontSize: isMobile ? "1.8rem" : "2.5rem", // Cambiar tamaño según pantalla
-        fontWeight: "900",
+        fontWeight: "500",
         color: isHovered ? "#fff" : "#eee",
         backgroundColor: isHovered ? "#555" : "transparent",
         padding: isMobile ? "3px 8px" : "5px 10px",
-        fontFamily: Letras.logoFont,
+        fontFamily: Typo.logoFont,
         letterSpacing: isMobile ? "2px" : "3px",
         transition: "all 0.3s ease",
         cursor: "pointer",
@@ -36,7 +36,7 @@ const Logo = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            {Letras.logoText}
+           Tallados Del Norte
         </div>
     );
 };
