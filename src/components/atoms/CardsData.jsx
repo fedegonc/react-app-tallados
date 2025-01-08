@@ -8,12 +8,12 @@ const cardsData = [
     {
         icon: "fas fa-hands",
         title: "Artesanía",
-        description: "Diseños únicos y personalizados, hechos a mano con materiales de calidad.",
+        description: "Apostamos por mejorar continuamente nuestro producto, en un proceso detallado que prioriza la calidad y las habilidades humanas ante los automatismos.",
     },
     {
         icon: "fas fa-palette",
         title: "Personalización",
-        description: "Ofrecemos opciones personalizadas para reflejar tu estilo y personalidad.",
+        description: "Ofrecemos opciones personalizadas para reflejar el estilo y personalidad de cada cliente.",
     },
     {
         icon: "fas fa-project-diagram",
