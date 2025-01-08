@@ -36,7 +36,7 @@ const Logo = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-           Tallados Del Norte
+          Alcance Tallados
         </div>
     );
 };
