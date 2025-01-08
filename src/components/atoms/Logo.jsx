@@ -36,7 +36,7 @@ const Logo = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-          Alcance Tallados
+          Momento Creativo
         </div>
     );
 };

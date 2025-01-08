@@ -64,7 +64,7 @@ const Banner = () => {
             {/* Contenido */}
             <div style={contentStyle}>
                 <div style={textStyle}>
-                    Plantamos un árbol <br/>por  cada tallado que hacemos
+                    Los Capos <br/> Del Tallado En Uruguay
                 </div>
                 <button
                     style={buttonStyle}
