@@ -27,7 +27,6 @@ const Navbar = () => {
     top: 0,
     left: 0,
     width: "100%",
-    backgroundColor: "rgba(0, 0, 0, 0.1)", // Semitransparente
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -35,8 +34,8 @@ const Navbar = () => {
     height: scrolled ? "50px" : "70px", // Reduce altura al hacer scroll
     zIndex: 1000,
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
-    backdropFilter: "blur(10px)", // Efecto de desenfoque
-    transition: "all 0.3s ease", // Transiciones suaves
+    backdropFilter: "blur(1px)", // Efecto de desenfoque
+    transition: "all 0.1s ease", // Transiciones suaves
   };
 
   return (
