@@ -1,0 +1,21 @@
+/* global.css */
+:root {
+    --font-primary: 'Protest Revolution', serif; /* Fuente principal */
+    --font-logo: 'Alegreya Sans SC', serif; /* Fuente específica para el logo */
+  }
+  
+  body {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+  }
+  
+  button, input, textarea {
+    font-family: var(--font-primary);
+  }
+  

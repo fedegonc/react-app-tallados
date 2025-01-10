@@ -1,5 +1,4 @@
 import React from "react";
-import Letras from "../atoms/Typo";
 
 const Banner = () => {
     const bannerStyle = {
@@ -37,7 +36,6 @@ const Banner = () => {
         textShadow: `
             3px 3px 0px rgba(0, 0, 0, 0.6), 
             6px 6px 0px rgba(0, 0, 0, 0.3)`,
-        fontFamily: Letras.textFont,
         marginBottom: "20px", // Separación entre el texto y el botón
     };
 
