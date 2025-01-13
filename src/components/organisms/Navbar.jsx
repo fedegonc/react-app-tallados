@@ -23,7 +23,7 @@ const Navbar = () => {
 
   const navbarStyles = {
     position: "fixed", // Fijo para mantenerse visible
-    fontSize: scrolled ? "1.8rem" : "2.5rem",
+    fontSize: scrolled ? "1.6rem" : "2.0rem",
     top: 0,
     left: 0,
     width: "100%",
