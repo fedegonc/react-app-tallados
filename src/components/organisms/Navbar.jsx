@@ -21,7 +21,7 @@ const Card = () => {
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
             opacity: 0,
             transform: "translateY(20px)",
-            transition: "opacity 0.5s ease, transform 0.5s ease",
+            transition: "opacity 0.6s ease, transform 0.6s ease",
         },
         cardVisible: {
             opacity: 1,
@@ -50,8 +50,11 @@ const Card = () => {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setVisibleCards((prev) => [...prev, entry.target.dataset.index]);
-                        observer.unobserve(entry.target);
+                        setVisibleCards((prev) =>
+                            prev.includes(entry.target.dataset.index)
+                                ? prev
+                                : [...prev, entry.target.dataset.index]
+                        );
                     }
                 });
             },
