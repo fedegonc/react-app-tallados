@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import cardsData from "./CardsData";
+import cardsData from "./atoms/CardsData";
 
 const Card = () => {
     const [visibleCards, setVisibleCards] = useState([]);
