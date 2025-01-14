@@ -35,7 +35,7 @@ const Logo = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            Momento Creativo
+            Significalo
         </div>
     );
 };
