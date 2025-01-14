@@ -1,91 +1,49 @@
 import React, { useState, useEffect } from "react";
-import cardsData from "./atoms/CardsData";
+import Logo from "../atoms/Logo";
+import Menu from "../molecules/Menu";
 
-const Card = () => {
-    const [visibleCards, setVisibleCards] = useState([]);
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
 
-    const styles = {
-        container: {
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: "20px",
-        },
-        card: {
-            textAlign: "center",
-            width: "300px",
-            margin: "20px",
-            backgroundColor: "#222",
-            borderRadius: "8px",
-            padding: "20px",
-            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-            opacity: 0,
-            transform: "translateY(20px)",
-            transition: "opacity 0.6s ease, transform 0.6s ease",
-        },
-        cardVisible: {
-            opacity: 1,
-            transform: "translateY(0)",
-        },
-        icon: {
-            fontSize: "3rem",
-            color: "#76C893",
-            marginBottom: "10px",
-        },
-        title: {
-            fontSize: "1.5rem",
-            fontWeight: "bold",
-            color: "#aaa",
-            marginBottom: "10px",
-        },
-        description: {
-            fontSize: "1rem",
-            color: "#eee",
-            lineHeight: "1.6",
-        },
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
     };
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setVisibleCards((prev) =>
-                            prev.includes(entry.target.dataset.index)
-                                ? prev
-                                : [...prev, entry.target.dataset.index]
-                        );
-                    }
-                });
-            },
-            { threshold: 0.1 }
-        );
+    window.addEventListener("scroll", handleScroll);
 
-        const cardElements = document.querySelectorAll(".card-item");
-        cardElements.forEach((card) => observer.observe(card));
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-        return () => observer.disconnect();
-    }, []);
+  const navbarStyles = {
+    position: "fixed", // Fijo para mantenerse visible
+    fontSize: scrolled ? "1.6rem" : "2.0rem",
+    top: 0,
+    left: 0,
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: scrolled ? "0 20px" : "0 30px",
+    height: scrolled ? "50px" : "70px", // Reduce altura al hacer scroll
+    zIndex: 1000,
+    boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
+    backdropFilter: "blur(1px)", // Efecto de desenfoque
+    transition: "all 0.1s ease", // Transiciones suaves
+  };
 
-    return (
-        <div style={styles.container}>
-            {cardsData.map((card, index) => (
-                <div
-                    key={index}
-                    data-index={index}
-                    className="card-item"
-                    style={{
-                        ...styles.card,
-                        ...(visibleCards.includes(String(index)) ? styles.cardVisible : {}),
-                    }}
-                >
-                    <i className={card.icon} style={styles.icon} aria-hidden="true"></i>
-                    <h3 style={styles.title}>{card.title}</h3>
-                    <p style={styles.description}>{card.description}</p>
-                </div>
-            ))}
-        </div>
-    );
+  return (
+    <header style={navbarStyles}>
+      <Logo />
+      <Menu />
+    </header>
+  );
 };
 
-export default Card;
+export default Navbar;
