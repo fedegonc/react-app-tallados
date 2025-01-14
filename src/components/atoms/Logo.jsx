@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-
+// Hook personalizado para estilos responsivos
 const useResponsiveStyles = (isHovered) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
@@ -11,8 +11,9 @@ const useResponsiveStyles = (isHovered) => {
     }, []);
 
     return {
-         // Cambiar tamaño según pantalla
+        fontFamily: "'Alkatra', sans-serif", // Fuente añadida directamente
         fontWeight: "500",
+        fontSize: isMobile ? "1.5rem" : "2rem", // Tamaño dinámico según la pantalla
         color: isHovered ? "#fff" : "#eee",
         backgroundColor: isHovered ? "#555" : "transparent",
         padding: isMobile ? "3px 8px" : "5px 10px",
@@ -34,7 +35,7 @@ const Logo = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-          Momento Creativo
+            Momento Creativo
         </div>
     );
 };
