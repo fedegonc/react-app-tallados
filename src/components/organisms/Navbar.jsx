@@ -30,12 +30,14 @@ const Navbar = () => {
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: scrolled ? "0 20px" : "0 30px",
-    height: scrolled ? "50px" : "70px", // Reduce altura al hacer scroll
+
     zIndex: 1000,
     boxShadow: "0 4px 6px rgba(0, 0, 0, 0.2)",
-    backdropFilter: "blur(1px)", // Efecto de desenfoque
+    backdropFilter: "blur(5px)",
+    backgroundColor: scrolled ? "rgba(0, 0, 0, 0.8)" : "rgba(0, 0, 0, 0.5)",
     transition: "all 0.1s ease", // Transiciones suaves
+    padding: "0 20px", // Espaciado uniforme
+    height: scrolled ? "40px" : "60px", // Altura no demasiado reducida
   };
 
   return (

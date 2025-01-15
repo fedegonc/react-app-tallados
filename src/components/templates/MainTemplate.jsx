@@ -1,72 +1,48 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../organisms/Navbar";
-import Footer from "../molecules/Footer";
+import Banner from "../atoms/Banner";
 
-const MainTemplate = ({ children }) => {
-  const navbarHeight = "70px"; // Ajusta según la altura del Navbar en su estado inicial
-  const [visibleSections, setVisibleSections] = useState([]);
+const MainTemplate = () => {
+  const navbarHeight = 70; // Altura del Navbar en píxeles
+  const [isLoaded, setIsLoaded] = useState(false); // Estado para la animación de carga
 
   const templateStyles = {
     display: "flex",
     flexDirection: "column",
-    minHeight: "100vh",
-    backgroundColor: "#000",
+    height: "100vh", // Altura fija para evitar scroll adicional
+    backgroundColor: "#000", // Fondo negro uniforme
     margin: 0,
     padding: 0,
+    overflow: "hidden", // Previene scroll innecesario
   };
 
   const mainStyles = {
-    flex: 1, // Permite que el contenido dinámico ocupe el espacio disponible
-    paddingTop: navbarHeight, // Espaciado superior para evitar que el contenido quede oculto
+    flex: 1,
+    marginTop: `${navbarHeight}px`, // Espaciado para evitar solapamiento
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    opacity: isLoaded ? 1 : 0, // Efecto de opacidad
+    transform: isLoaded ? "translateY(0)" : "translateY(20px)", // Efecto de entrada
+    transition: "opacity 0.6s ease, transform 0.6s ease", // Animación suave
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.dataset.index, 10);
-            setVisibleSections((prev) =>
-              prev.includes(index) ? prev : [...prev, index]
-            );
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
+    // Simula la carga inicial del contenido
+    const timer = setTimeout(() => setIsLoaded(true), 100); // Retraso de 100ms
 
-    const sectionElements = document.querySelectorAll(".main-template-section");
-    sectionElements.forEach((el) => observer.observe(el));
-
-    return () => observer.disconnect();
+    return () => clearTimeout(timer); // Limpieza del temporizador
   }, []);
 
   return (
     <div style={templateStyles}>
-      {/* Navbar siempre visible */}
+      {/* Navbar fijo */}
       <Navbar />
 
-      {/* Contenido dinámico */}
+      {/* Contenido dinámico (solo el Banner) */}
       <main style={mainStyles}>
-        {React.Children.map(children, (child, index) => (
-          <div
-            className="main-template-section"
-            data-index={index}
-            style={{
-              opacity: visibleSections.includes(index) ? 1 : 0,
-              transform: visibleSections.includes(index)
-                ? "translateY(0)"
-                : "translateY(20px)",
-              transition: "opacity 0.6s ease, transform 0.6s ease",
-            }}
-          >
-            {child}
-          </div>
-        ))}
+        <Banner />
       </main>
-
-      {/* Footer siempre visible */}
-      <Footer />
     </div>
   );
 };

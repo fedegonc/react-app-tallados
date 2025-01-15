@@ -1,1 +1,21 @@
+/* index.css */
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&family=Fredoka:wght@400;700&display=swap');
 
+:root {
+  --font-primary: 'Alkatra', sans-serif;
+  --font-secondary: 'Fredoka', sans-serif;
+}
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-secondary);
+}
+
+p, span, div, input, button {
+  font-family: var(--font-primary);
+}
