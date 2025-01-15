@@ -10,8 +10,10 @@ const Banner = () => {
     backgroundRepeat: "no-repeat", // Evita que la imagen se repita
     position: "relative",
     display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
+    flexDirection: "column", // Organiza el texto en columnas
+    justifyContent: "flex-start", // Alinea el contenido hacia la parte superior
+    alignItems: "center", // Centra horizontalmente
+    paddingTop: "15vh", // Ajusta el espacio superior del texto
   };
 
   const overlayStyle = {
@@ -29,49 +31,30 @@ const Banner = () => {
     textAlign: "center",
     color: "#ffffff",
     padding: "0 20px", // Espaciado para evitar que el texto toque los bordes
-
   };
 
-  const getTextStyle = () => {
-    const width = window.innerWidth;
-
-    if (width <= 480) {
-      return {
-        fontSize: "1.5rem", // Tamaño compacto para móviles
-        lineHeight: "1.4",
-        padding: "0 5px",
-      };
-    } else if (width <= 768) {
-      return {
-        fontSize: "2rem", // Más pequeño para pantallas tablet
-        lineHeight: "1.4",
-        padding: "0 10px",
-      };
-    } else if (width <= 1024) {
-      return {
-        fontSize: "2.5rem", // Reducir tamaño para pantallas medianas
-        lineHeight: "1.4",
-        padding: "0 15px",
-      };
-    } else {
-      return {
-        fontSize: "3rem", // Tamaño normal para pantallas grandes
-        lineHeight: "1.4",
-        padding: "0 20px",
-      };
-    }
+  const titleStyle = {
+    fontSize: "3rem", // Tamaño grande para el título
+    fontWeight: "bold",
+    textShadow: "2px 2px 4px rgba(0, 0, 0, 0.8)",
+    marginBottom: "10px", // Separación del texto secundario
   };
 
-  const textStyle = getTextStyle();
+  const descriptionStyle = {
+    fontSize: "1.5rem", // Tamaño más pequeño para el texto secundario
+    lineHeight: "1.6",
+    textShadow: "1px 1px 2px rgba(0, 0, 0, 0.8)",
+  };
 
   return (
     <div style={bannerStyle}>
       <div style={overlayStyle}></div>
       <div style={contentStyle}>
-        <div style={textStyle}>
-          Conecta con la tradición y el arte atemporal de nuestros tallados en
-          madera. Diseñados con precisión y personalización, cada pieza
-          enriquece tus espacios y perdura como un legado.
+        <div style={titleStyle}>
+          Tradición y Artesanía en madera
+        </div>
+        <div style={descriptionStyle}>
+          Diseños personalizados que enriquecen tus espacios con durabilidad y estilo, reflejando un legado único.
         </div>
       </div>
     </div>
