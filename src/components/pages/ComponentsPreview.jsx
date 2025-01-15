@@ -1,5 +1,5 @@
 import React from "react";
-import Colors from "../atoms/Colors"; 
+import Colors from "../atoms/Colors";
 import Navbar from '../organisms/Navbar';
 
 const ComponentsPreview = () => {
@@ -35,6 +35,7 @@ const ComponentsPreview = () => {
       </section>
 
     </div>
+
   );
 };
 

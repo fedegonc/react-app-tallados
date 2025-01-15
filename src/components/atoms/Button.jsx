@@ -1,32 +1,61 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const Button = ({ label, onClick }) => {
-  const [isHovered, setIsHovered] = useState(false); // Estado para manejar hover
+const Banner = () => {
+  const bannerStyles = {
+    position: 'relative',
+    height: '100vh',
+    width: '100%',
+    backgroundImage: `url('/path-to-your-image.jpg')`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  };
 
-  const buttonStyles = {
-    padding: '10px 20px',
-    backgroundColor: isHovered ? '#3A4A3A' : '#4A5D4E', // Verde más oscuro al hacer hover
-    color: '#FFFFFF', // Texto blanco siempre
-    border: '2px solid #3A4A3A', // Borde sutil
-    borderRadius: '8px', // Bordes suavemente redondeados
-    cursor: 'pointer',
-    transition: 'all 0.3s ease',
-    transform: isHovered ? 'scale(1.05)' : 'scale(1)', // Aumenta ligeramente
-    boxShadow: isHovered
-      ? '0 4px 6px rgba(0, 0, 0, 0.2)'
-      : '0 2px 4px rgba(0, 0, 0, 0.1)', // Sombra al hacer hover
+  const overlayStyles = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent overlay
+    zIndex: 1,
+  };
+
+  const contentStyles = {
+    position: 'relative',
+    zIndex: 2,
+    textAlign: 'center',
+    color: '#fff',
+    padding: '0 20px',
+  };
+
+  const titleStyles = {
+    fontSize: '3rem',
+    fontWeight: 'bold',
+    textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
+    marginBottom: '10px',
+  };
+
+  const descriptionStyles = {
+    fontSize: '1.5rem',
+    lineHeight: '1.6',
+    textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)',
   };
 
   return (
-    <button
-      style={buttonStyles}
-      onClick={onClick}
-      onMouseEnter={() => setIsHovered(true)} // Activa el hover
-      onMouseLeave={() => setIsHovered(false)} // Desactiva el hover
-    >
-      {label}
-    </button>
+    <div style={bannerStyles}>
+      <div style={overlayStyles}></div>
+      <div style={contentStyles}>
+        <h1 style={titleStyles}>Tradición y Artesanía en madera</h1>
+        <p style={descriptionStyles}>
+          Diseños personalizados que enriquecen tus espacios con durabilidad y estilo, reflejando un legado único.
+        </p>
+      </div>
+    </div>
   );
 };
 
-export default Button;
+export default Banner;
