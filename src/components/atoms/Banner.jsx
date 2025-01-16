@@ -6,7 +6,7 @@ const Banner = () => {
     display: 'flex',
     height: '100vh',
     width: '100%',
-    backgroundImage: `url('/path-to-your-image.jpg')`, // Cambia la ruta por la imagen que usarás
+    backgroundImage: `url(${process.env.PUBLIC_URL}/img1.jpg)`, // Imagen de fondo desde la carpeta public
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
@@ -14,7 +14,7 @@ const Banner = () => {
   };
 
   const leftSectionStyles = {
-    flex: 7,
+    flex: 7, // 70% del ancho
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -23,7 +23,7 @@ const Banner = () => {
   };
 
   const rightSectionStyles = {
-    flex: 3,
+    flex: 3, // 30% del ancho
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -31,11 +31,13 @@ const Banner = () => {
 
   return (
     <div style={containerStyles}>
+      {/* Sección izquierda: Título */}
       <div style={leftSectionStyles}>
         <TitleAtom text="Tradición y Artesanía en madera" />
       </div>
+      {/* Sección derecha: Vacío por ahora */}
       <div style={rightSectionStyles}>
-        {/* Aquí puedes agregar la imagen como componente más adelante */}
+        {/* Aquí se incluirá la imagen o nuevos componentes más adelante */}
       </div>
     </div>
   );
