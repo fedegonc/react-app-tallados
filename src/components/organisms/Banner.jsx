@@ -12,7 +12,7 @@ const Banner = () => {
       left: 0,
       height: '100vh',
       width: '100%',
-      backgroundImage: `url(${process.env.PUBLIC_URL}/static/img1.jpeg.jpeg)`,
+      backgroundImage: `url(${process.env.PUBLIC_URL}/static/img10.jpeg)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
