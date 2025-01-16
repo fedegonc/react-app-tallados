@@ -6,15 +6,12 @@ const MainTemplate = ({ children }) => {
   const navbarHeight = 70; // Altura fija del Navbar
   const footerHeight = 70; // Altura fija del Footer
 
-  // Estado para controlar si la animación ha terminado
+  // Estado para controlar si la animación debe ejecutarse
   const [isAnimated, setIsAnimated] = useState(false);
 
   useEffect(() => {
-    // Desactivar la animación después de que se complete
-    const timer = setTimeout(() => {
-      setIsAnimated(true);
-    }, 1200); // Duración de la animación: 1.2s
-    return () => clearTimeout(timer);
+    // Activa la animación al montar el componente
+    setIsAnimated(true);
   }, []);
 
   const templateStyles = {
@@ -24,9 +21,8 @@ const MainTemplate = ({ children }) => {
     margin: 0,
     padding: 0,
     overflow: "hidden", // Previene desbordamiento
-    transform: isAnimated ? "translateY(0)" : "translateY(-100%)", // Movimiento inicial
-    opacity: isAnimated ? 1 : 0, // Transición de visibilidad
-    transition: "transform 1.2s ease-out, opacity 1.2s ease-out", // Efecto de despliegue suave
+    opacity: isAnimated ? 1 : 0, // Transición de opacidad
+    transition: "opacity 1.5s ease-in-out", // Transición suave al aparecer
   };
 
   const mainStyles = {
