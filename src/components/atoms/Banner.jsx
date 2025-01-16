@@ -1,5 +1,5 @@
 import React from 'react';
-import TitleAtom from './atoms/TitleAtom';
+import TitleAtom from './TitleAtom';
 
 const Banner = () => {
   const containerStyles = {
@@ -30,16 +30,13 @@ const Banner = () => {
   };
 
   return (
-    <div style={containerStyles}>
-      {/* Sección izquierda: Título */}
-      <div style={leftSectionStyles}>
+    
+      
+ 
         <TitleAtom text="Tradición y Artesanía en madera" />
       </div>
-      {/* Sección derecha: Vacío por ahora */}
-      <div style={rightSectionStyles}>
-        {/* Aquí se incluirá la imagen o nuevos componentes más adelante */}
-      </div>
-    </div>
+     
+  
   );
 };
 
