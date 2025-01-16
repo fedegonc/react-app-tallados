@@ -10,8 +10,8 @@ const Footer = () => {
     justifyContent: "center",
     alignItems: "center",
     zIndex: 1000,
-    backdropFilter: "blur(5px)",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    backdropFilter: "blur(1px)",
+    backgroundColor: "rgba(0, 0, 0, 0.0)",
     color: "rgba(200, 200, 200, 0.9)",
     transition: "all 0.3s ease",
     height: "70px",
@@ -19,7 +19,7 @@ const Footer = () => {
 
   return (
     <footer style={footerStyles}>
-      <p>© 2025 Tradición y Artesanía. Todos los derechos reservados.</p>
+      <p>© 2025 IDEAS CREATIVAS  </p>
     </footer>
   );
 };

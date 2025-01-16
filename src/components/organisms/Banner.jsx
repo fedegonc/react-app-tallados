@@ -3,16 +3,7 @@ import Overlay from '../molecules/Overlay';
 import Content from '../molecules/Content';
 
 const Banner = () => {
-  const buttonStyles = {
-    padding: '12px 24px',
-    defaultBackground: '#1E90FF', // Azul claro por defecto
-    hoverBackground: '#4682B4', // Azul más oscuro en hover
-    textColor: '#FFFFFF', // Texto blanco
-    borderColor: '#5F9EA0', // Color de borde
-    borderRadius: '10px', // Bordes redondeados
-    defaultShadow: '0 2px 5px rgba(0, 0, 0, 0.1)', // Sombra por defecto
-    hoverShadow: '0 4px 8px rgba(0, 0, 0, 0.3)', // Sombra al hacer hover
-  };
+
 
   return (
     <div
@@ -30,7 +21,7 @@ const Banner = () => {
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        zIndex: -1,
+
       }}
     >
       <Overlay />
@@ -39,7 +30,7 @@ const Banner = () => {
         paragraphText="Diseños personalizados que enriquecen tus espacios con durabilidad y estilo, reflejando un legado único."
         buttonText="Explora Más"
         onButtonClick={() => alert('¡Gracias por explorar más!')}
-        buttonStyles={buttonStyles} // Pasamos los estilos personalizados del botón
+
       />
     </div>
   );
