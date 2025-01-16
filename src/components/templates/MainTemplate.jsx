@@ -1,48 +1,51 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../organisms/Navbar";
-import Banner from "../atoms/Banner";
+import Footer from "../organisms/Footer";
 
-const MainTemplate = () => {
-  const navbarHeight = 70; // Altura del Navbar en píxeles
-  const [isLoaded, setIsLoaded] = useState(false); // Estado para la animación de carga
+const MainTemplate = ({ children }) => {
+  const navbarHeight = 70; // Altura fija del Navbar
+  const footerHeight = 70; // Altura fija del Footer
+
+  // Estado para controlar si la animación ha terminado
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    // Desactivar la animación después de que se complete
+    const timer = setTimeout(() => {
+      setIsAnimated(true);
+    }, 1200); // Duración de la animación: 1.2s
+    return () => clearTimeout(timer);
+  }, []);
 
   const templateStyles = {
     display: "flex",
     flexDirection: "column",
-    height: "100vh", // Altura fija para evitar scroll adicional
-    backgroundColor: "#000", // Fondo negro uniforme
+    height: "100vh", // Ocupa exactamente el alto de la ventana
     margin: 0,
     padding: 0,
-    overflow: "hidden", // Previene scroll innecesario
+    overflow: "hidden", // Previene desbordamiento
+    transform: isAnimated ? "translateY(0)" : "translateY(-100%)", // Movimiento inicial
+    opacity: isAnimated ? 1 : 0, // Transición de visibilidad
+    transition: "transform 1.2s ease-out, opacity 1.2s ease-out", // Efecto de despliegue suave
   };
 
   const mainStyles = {
-    flex: 1,
-    marginTop: `${navbarHeight}px`, // Espaciado para evitar solapamiento
+    flex: 1, // Toma el espacio restante entre Navbar y Footer
+    overflow: "hidden", // Previene el desbordamiento
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    opacity: isLoaded ? 1 : 0, // Efecto de opacidad
-    transform: isLoaded ? "translateY(0)" : "translateY(20px)", // Efecto de entrada
-    transition: "opacity 0.6s ease, transform 0.6s ease", // Animación suave
   };
-
-  useEffect(() => {
-    // Simula la carga inicial del contenido
-    const timer = setTimeout(() => setIsLoaded(true), 100); // Retraso de 100ms
-
-    return () => clearTimeout(timer); // Limpieza del temporizador
-  }, []);
 
   return (
     <div style={templateStyles}>
-      {/* Navbar fijo */}
-      <Navbar />
-
-      {/* Contenido dinámico (solo el Banner) */}
-      <main style={mainStyles}>
-        <Banner />
-      </main>
+      <div style={{ height: `${navbarHeight}px` }}>
+        <Navbar />
+      </div>
+      <main style={mainStyles}>{children}</main>
+      <div style={{ height: `${footerHeight}px` }}>
+        <Footer />
+      </div>
     </div>
   );
 };

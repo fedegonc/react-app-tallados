@@ -1,11 +1,6 @@
 import React from "react";
 import MainTemplate from "../templates/MainTemplate";
-import Banner from "../atoms/Banner";
-import Card from "../atoms/Card";
-
-
-
-
+import Banner from "../organisms/Banner";
 
 
 
@@ -14,8 +9,6 @@ const HomePage = () => {
     <MainTemplate>
       
       <Banner />
-
-      <Card />
 
     </MainTemplate>
   );

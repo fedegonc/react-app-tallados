@@ -1,12 +1,13 @@
-
 import React from 'react';
 import Title from '../atoms/Title';
 
 const Banner = () => {
   const styles = {
     banner: {
-      position: 'relative',
-      height: '100vh',
+      position: 'absolute', // Para ocupar toda la pantalla
+      top: 0,
+      left: 0,
+      height: '100vh', // Siempre ocupará el 100% de la pantalla
       width: '100%',
       backgroundImage: `url(${process.env.PUBLIC_URL}/static/img1.jpeg.jpeg)`,
       backgroundSize: 'cover',
@@ -14,11 +15,10 @@ const Banner = () => {
       backgroundRepeat: 'no-repeat',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'flex-start', // Ajuste para alinear hacia arriba
-      alignItems: 'center',
+      justifyContent: 'center', // Centrar contenido verticalmente
+      alignItems: 'center', // Centrar contenido horizontalmente
       color: '#fff',
-      overflow: 'hidden',
-      paddingTop: '10vh', // Control preciso de la posición vertical
+      zIndex: -1, // Asegura que esté detrás del Navbar
     },
     overlay: {
       position: 'absolute',
@@ -26,7 +26,7 @@ const Banner = () => {
       left: 0,
       width: '100%',
       height: '100%',
-      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Ajuste del contraste
+      backgroundColor: 'rgba(0, 0, 0, 0.5)', // Superposición para contraste
       zIndex: 1,
     },
     content: {
@@ -34,13 +34,6 @@ const Banner = () => {
       zIndex: 2,
       textAlign: 'center',
       padding: '0 20px',
-    },
-    title: {
-      fontSize: '3rem',
-      fontWeight: '400',
-      fontFamily: "'Alkatra', sans-serif",
-      textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
-      marginBottom: '20px',
     },
     description: {
       fontSize: '1.5rem',
@@ -79,7 +72,7 @@ const Banner = () => {
     <div style={styles.banner}>
       <div style={styles.overlay}></div>
       <div style={styles.content}>
-       <Title text="Tradición y Artesanía en madera" />
+        <Title text="Tradición y Artesanía en madera" />
         <p style={styles.description}>
           Diseños personalizados que enriquecen tus espacios con durabilidad y estilo, reflejando un legado único.
         </p>
