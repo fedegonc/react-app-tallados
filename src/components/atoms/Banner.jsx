@@ -1,12 +1,15 @@
 import React from 'react';
-import TitleAtom from './TitleAtom';
+import TitleAtom from './atoms/TitleAtom';
 
 const Banner = () => {
   const containerStyles = {
     display: 'flex',
     height: '100vh',
     width: '100%',
-    backgroundColor: '#000',
+    backgroundImage: `url('/path-to-your-image.jpg')`, // Cambia la ruta por la imagen que usarás
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
     color: '#fff',
   };
 
@@ -31,7 +34,9 @@ const Banner = () => {
       <div style={leftSectionStyles}>
         <TitleAtom text="Tradición y Artesanía en madera" />
       </div>
-
+      <div style={rightSectionStyles}>
+        {/* Aquí puedes agregar la imagen como componente más adelante */}
+      </div>
     </div>
   );
 };
