@@ -6,16 +6,17 @@ const Banner = () => {
       position: 'relative',
       height: '100vh',
       width: '100%',
-      backgroundImage: `url(${process.env.PUBLIC_URL}/static/img1.jpeg)`,
+      backgroundImage: `url(${process.env.PUBLIC_URL}/static/img1.jpeg.jpeg)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat',
       display: 'flex',
       flexDirection: 'column',
-      justifyContent: 'center',
+      justifyContent: 'flex-start', // Ajuste para alinear hacia arriba
       alignItems: 'center',
       color: '#fff',
       overflow: 'hidden',
+      paddingTop: '10vh', // Control preciso de la posición vertical
     },
     overlay: {
       position: 'absolute',
@@ -34,19 +35,17 @@ const Banner = () => {
     },
     title: {
       fontSize: '3rem',
-      fontWeight: '400', // Reducción del grosor de la fuente
-      fontFamily: "'Alkatra', sans-serif", // Fuente más delgada o personalizada
+      fontWeight: '400',
+      fontFamily: "'Alkatra', sans-serif",
       textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
       marginBottom: '20px',
-      animation: 'fadeInDown 1s ease-in-out',
     },
     description: {
       fontSize: '1.5rem',
       lineHeight: '1.6',
-      fontWeight: '300', // También ajustar el peso del subtítulo
+      fontWeight: '300',
       textShadow: '1px 1px 2px rgba(0, 0, 0, 0.8)',
       marginBottom: '30px',
-      animation: 'fadeInUp 1.2s ease-in-out',
     },
     button: {
       padding: '10px 20px',
@@ -58,7 +57,6 @@ const Banner = () => {
       borderRadius: '5px',
       cursor: 'pointer',
       transition: 'all 0.3s ease',
-      animation: 'fadeIn 1.5s ease-in-out',
     },
     buttonHover: {
       backgroundColor: '#f1c40f',
@@ -69,6 +67,10 @@ const Banner = () => {
     e.target.style.backgroundColor = isHovering
       ? styles.buttonHover.backgroundColor
       : styles.button.backgroundColor;
+  };
+
+  const handleClick = () => {
+    alert('¡Gracias por hacer clic!');
   };
 
   return (
@@ -83,6 +85,7 @@ const Banner = () => {
           style={styles.button}
           onMouseEnter={(e) => handleHover(e, true)}
           onMouseLeave={(e) => handleHover(e, false)}
+          onClick={handleClick}
         >
           Explora Más
         </button>
