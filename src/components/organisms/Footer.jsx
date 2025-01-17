@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from '../molecules/Modal';
 
 const Footer = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const footerStyles = {
     padding: "10px",
     textAlign: "center",
@@ -18,9 +21,16 @@ const Footer = () => {
   };
 
   return (
-    <footer style={footerStyles}>
-      <p>© 2025 fedelabs </p>
-    </footer>
+    <>
+      <footer style={footerStyles}>
+        <p onClick={() => setIsModalOpen(true)} style={{ cursor: 'pointer' }}>
+          © 2025 fedelabs
+        </p>
+      </footer>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+        <p>Este es el contenido del modal</p>
+      </Modal>
+    </>
   );
 };
 
