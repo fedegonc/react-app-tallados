@@ -19,7 +19,7 @@ const Footer = () => {
 
   return (
     <footer style={footerStyles}>
-      <p>© 2025 fedelabs</p>
+      <p>© 2025 fedelabs </p>
     </footer>
   );
 };
