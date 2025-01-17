@@ -1,6 +1,6 @@
 import React from "react";
 import MainTemplate from "../templates/MainTemplate";
-import Banner from "../organisms/Banner";
+import Principal from "../organisms/Principal";
 
 
 const HomePage = () => {
@@ -8,7 +8,7 @@ const HomePage = () => {
 
   return (
     <MainTemplate>
-      <Banner />
+      <Principal />
 
     </MainTemplate>
   );

@@ -23,6 +23,10 @@ const MainTemplate = ({ children }) => {
     overflow: "hidden", // Previene desbordamiento
     opacity: isAnimated ? 1 : 0, // Transición de opacidad
     transition: "opacity 1.5s ease-in-out", // Transición suave al aparecer
+    backgroundImage: `url(${process.env.PUBLIC_URL}/static/img1.jpeg)`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
   };
 
   const mainStyles = {
