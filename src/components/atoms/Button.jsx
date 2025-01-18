@@ -12,7 +12,7 @@ const useButtonStyles = (isHovered) => {
 
   return {
     padding: isMobile ? '10px 20px' : '12px 24px', // Ajuste de padding para móvil
-    backgroundColor: isHovered ? '#FFFFFF' : '#4A5D4E', // Fondo dinámico
+    backgroundColor: isHovered ? '#FFFFFF' : '#1A2D2E', // Fondo dinámico
     color: isHovered ? '#4A5D4E' : '#FFFFFF', // Texto dinámico
     fontSize: isMobile ? '1rem' : '1.2rem', // Tamaño de fuente dinámico
     fontWeight: 'bold',
