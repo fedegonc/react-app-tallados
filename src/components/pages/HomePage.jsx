@@ -6,24 +6,26 @@ const HomePage = () => {
   // Lista de contenidos dinámicos
   const contents = [
     {
-      titleText: "Tradición y Artesanía en madera",
+      titleText: "Bienvenido a Tu Significado",
       paragraphText:
-        "Diseños personalizados que enriquecen tus espacios con durabilidad y estilo, reflejando un legado único.",
-      buttonText: "Explora Más",
+        "Creamos piezas únicas que conectan tradición y diseño, hechas con madera de la más alta calidad y personalizadas según tus necesidades.",
+      buttonText: "Saber Más",
     },
     {
-      titleText: "Innovación y Diseño Moderno",
+      titleText: "Nuestra Historia",
       paragraphText:
-        "Creamos piezas únicas para espacios contemporáneos, combinando creatividad y funcionalidad.",
-      buttonText: "Conoce Más",
+        "Con raíces en la artesanía local, buscamos combinar técnicas tradicionales con diseños modernos para crear obras que trasciendan el tiempo.",
+      buttonText: "Conoce Nuestro Trabajo",
     },
     {
-      titleText: "Sostenibilidad y Elegancia",
+      titleText: "¿Tienes un Proyecto en Mente?",
       paragraphText:
-        "Nuestros diseños priorizan el cuidado del medio ambiente sin comprometer la calidad.",
-      buttonText: "Descubre Más",
+        "Nos encantaría escucharte y ayudarte a convertir tu idea en una realidad tangible. Cada proyecto es especial y único para nosotros.",
+      buttonText: "Habla con Nosotros",
+      buttonLink: "https://wa.me/tu-numero-de-whatsapp", // Enlace a WhatsApp
     },
   ];
+
 
   // Estado para seleccionar el contenido actual
   const [currentIndex, setCurrentIndex] = useState(0);

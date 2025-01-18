@@ -24,7 +24,7 @@ const Footer = () => {
     <>
       <footer style={footerStyles}>
         <p onClick={() => setIsModalOpen(true)} style={{ cursor: 'pointer' }}>
-          © 2025 fede labs
+          © 2025  Provider by Vercel-React code by FG
         </p>
       </footer>
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
