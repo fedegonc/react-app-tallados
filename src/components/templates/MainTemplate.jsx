@@ -27,6 +27,17 @@ const MainTemplate = ({ children }) => {
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat",
+    position: "relative", // Necesario para el overlay
+  };
+
+  const overlayStyles = {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.5)", // Overlay semitransparente
+    zIndex: 1, // Asegura que esté encima del fondo
   };
 
   const mainStyles = {
@@ -35,15 +46,25 @@ const MainTemplate = ({ children }) => {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    zIndex: 2, // Asegura que el contenido esté sobre el overlay
+    position: "relative",
   };
 
   return (
     <div style={templateStyles}>
-      <div style={{ height: `${navbarHeight}px` }}>
+      {/* Overlay */}
+      <div style={overlayStyles} />
+
+      {/* Navbar */}
+      <div style={{ height: `${navbarHeight}px`, zIndex: 3 }}>
         <Navbar />
       </div>
+
+      {/* Main content */}
       <main style={mainStyles}>{children}</main>
-      <div style={{ height: `${footerHeight}px` }}>
+
+      {/* Footer */}
+      <div style={{ height: `${footerHeight}px`, zIndex: 3 }}>
         <Footer />
       </div>
     </div>
