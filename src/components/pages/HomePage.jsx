@@ -6,7 +6,7 @@ const HomePage = () => {
   // Lista de contenidos dinámicos
   const contents = [
     {
-      titleText: "Bienvenido a Tu Significado",
+      titleText: "Dale un toque unico a tu establecimiento u hogar",
       paragraphText:
         "Creamos piezas únicas que conectan tradición y diseño, hechas con madera de la más alta calidad y personalizadas según tus necesidades.",
       buttonText: "Saber Más",
