@@ -4,7 +4,7 @@ import './App.css';
 import HomePage from './components/pages/HomePage';
 import TestPage from './components/pages/TestPage'; // Importa la nueva página
 import Documents from './components/pages/Documents';
-import LinePage from './components/pages/LinePage';
+import Estructure from './components/templates/Estructure';
 
 
 
@@ -19,7 +19,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/test" element={<TestPage />} />
           <Route path="/documentos" element={<Documents />} />
-          <Route path="/line-page" element={<LinePage />} />
+          <Route path="/line-page" element={<Estructure />} />
 
         </Routes>
       </div>

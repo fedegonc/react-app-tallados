@@ -1,7 +1,7 @@
 import React from 'react';
 import Forma from '../atoms/Forma';
 
-const TemplateExample = () => {
+const Estructure = () => {
   return (
     <div
       style={{
@@ -87,4 +87,4 @@ const TemplateExample = () => {
   );
 };
 
-export default TemplateExample;
+export default Estructure;
