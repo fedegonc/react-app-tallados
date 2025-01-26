@@ -5,10 +5,7 @@ import HomePage from './components/pages/HomePage';
 import TestPage from './components/pages/TestPage'; // Importa la nueva página
 import Documents from './components/pages/Documents';
 import Estructure from './components/templates/Estructure';
-
-
-
-
+import WhatsAppButton from './components/atoms/WhatsAppButton';
 
 function App() {
   return (
@@ -22,6 +19,7 @@ function App() {
           <Route path="/line-page" element={<Estructure />} />
 
         </Routes>
+        <WhatsAppButton />
       </div>
     </Router>
   );

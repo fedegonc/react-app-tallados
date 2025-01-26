@@ -1,42 +1,51 @@
-import React from 'react';
-import Card from '../molecules/Card';
+import React from "react";
 
-const CardGrid = () => {
-  const cards = [
-    { id: 1, title: 'Card 1', description: 'Test description 1' },
-    { id: 2, title: 'Card 2', description: 'Test description 2' },
-    { id: 3, title: 'Card 3', description: 'Test description 3' },
-    { id: 4, title: 'Card 4', description: 'Test description 4' },
-    { id: 5, title: 'Card 5', description: 'Test description 5' },
-    { id: 6, title: 'Card 6', description: 'Test description 6' },
-  ];
-
+const CardGrid = ({ cards }) => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        minHeight: '100vh', // Altura mínima para ocupar toda la pantalla
-        backgroundColor: '#f9f9f9', // Fondo claro
-      }}
-    >
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-          gap: '20px',
-        }}
-      >
-        {cards.map((card) => (
-          <Card
-            key={card.id}
-            title={card.title}
-            description={card.description}
-            imageSrc="https://via.placeholder.com/200"
-          />
-        ))}
-      </div>
+    <div className="card-grid">
+      {cards.map((card, index) => (
+        <div
+          key={index}
+          className="card"
+          onClick={() => card.onClick()}
+        >
+          <span className="card-text">{card.label}</span>
+        </div>
+      ))}
+      <style jsx>{`
+        .card-grid {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 20px;
+          width: 100%;
+          padding: 20px;
+          justify-items: center;
+        }
+
+        .card {
+          width: 150px;
+          height: 150px;
+          background-color: #fff;
+          color: #000;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-text {
+          font-size: 1.2rem;
+          font-weight: bold;
+        }
+      `}</style>
     </div>
   );
 };
