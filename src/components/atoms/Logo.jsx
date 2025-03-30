@@ -20,7 +20,9 @@ const useResponsiveStyles = (isHovered) => {
         letterSpacing: isMobile ? "2px" : "3px",
         transition: "all 0.3s ease",
         cursor: "pointer",
-        display: "inline-block",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "flex-start", // Alinea el contenido a la izquierda
         borderRadius: "2px",
     };
 };
@@ -35,7 +37,16 @@ const Logo = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            Tu Significado
+            <img 
+                src="/static/logo_2.png" 
+                alt="Logo" 
+                style={{ 
+                    width: '50px', 
+                    height: '50px', 
+                    marginRight: '10px' 
+                }} 
+            />
+            El Guía del Tallado
         </div>
     );
 };
