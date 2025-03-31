@@ -1,9 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import MainTemplate from "../templates/MainTemplate";
 import Content from "../molecules/Content";
 import ProductSection from "../organisms/ProductSection";
+import ProductPage from "./ProductPage";
 
 const HomePage = () => {
+  const [currentView, setCurrentView] = useState("home");
+  const [productType, setProductType] = useState(null);
+
+  // Función para navegar a la página de productos
+  const navigateToProduct = (type) => {
+    setProductType(type);
+    setCurrentView("product");
+    window.scrollTo(0, 0); // Scroll al inicio de la página
+  };
+
+  // Función para volver a la página principal
+  const navigateToHome = () => {
+    setCurrentView("home");
+  };
+
+  // Función para contactar por WhatsApp
+  const contactWhatsApp = () => {
+    const phoneNumber = '59892224955';
+    const message = 'Hola, me gustaría obtener más información sobre sus productos de tallado.';
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  // Si estamos en la vista de producto, mostrar la página de producto
+  if (currentView === "product") {
+    return <ProductPage type={productType} onBack={navigateToHome} />;
+  }
+
+  // Vista principal con scroll
   return (
     <MainTemplate>
       <div className="scroll-container">
@@ -11,18 +41,21 @@ const HomePage = () => {
         <section className="welcome-section">
           <div className="welcome-container">
             <div className="welcome-content">
-              <Content
-                titleText="Bienvenido"
-                paragraphText="Descubre nuestras piezas únicas y personalizadas, hechas con la mejor calidad de madera y diseño artesanal."
-                buttonText="Explorar"
-                onButtonClick={() => {
-                  // Scroll suave hacia la sección de productos
-                  document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
-                }}
-              />
+              <div className="welcome-text-container">
+                <Content
+                  titleText="Bienvenido"
+                  paragraphText="Descubre nuestras piezas únicas y personalizadas, hechas con la mejor calidad de madera y diseño artesanal."
+                  buttonText="Explorar"
+                  onButtonClick={() => {
+                    // Scroll suave hacia la sección de productos
+                    document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
+                  }}
+                />
+              </div>
             </div>
             <div className="welcome-image">
               <img src="/static/img2.jpg" alt="Tallado en madera" />
+              <div className="image-overlay"></div>
             </div>
           </div>
         </section>
@@ -39,6 +72,7 @@ const HomePage = () => {
               description="Técnica que eleva las figuras sobre la superficie de la madera, creando profundidad y dimensión."
               imagePath="/static/imagen3.jpg"
               buttonText="Ver productos"
+              onButtonClick={() => navigateToProduct("relieve")}
             />
             
             {/* Tallado pintado */}
@@ -47,6 +81,7 @@ const HomePage = () => {
               description="Combinación de tallado tradicional con técnicas de pintura para dar vida y color a cada pieza."
               imagePath="/static/imagen5.jpg"
               buttonText="Ver productos"
+              onButtonClick={() => navigateToProduct("pintado")}
             />
             
             {/* Tallado hundido */}
@@ -55,21 +90,9 @@ const HomePage = () => {
               description="Arte de crear diseños rebajando la superficie de la madera, generando contrastes de luz y sombra."
               imagePath="/static/imagen7.jpg"
               buttonText="Ver productos"
+              onButtonClick={() => navigateToProduct("hundido")}
             />
           </div>
-        </section>
-
-        {/* Sección de contacto */}
-        <section className="contact-section">
-          <Content
-            titleText="Contacto"
-            paragraphText="¿Interesado en un diseño personalizado? Contáctanos para crear una pieza única adaptada a tus necesidades."
-            buttonText="Contactar"
-            onButtonClick={() => {
-              // Aquí puedes implementar la funcionalidad de contacto
-              window.location.href = "mailto:contacto@guiadeltallado.com";
-            }}
-          />
         </section>
 
         <style jsx>{`
@@ -92,7 +115,9 @@ const HomePage = () => {
           
           .welcome-section {
             align-items: center;
-            padding: 0 50px;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
           }
           
           .welcome-container {
@@ -101,28 +126,50 @@ const HomePage = () => {
             justify-content: space-between;
             width: 100%;
             max-width: 1200px;
-            gap: 2rem;
+            margin: 0 auto;
+            position: relative;
           }
           
           .welcome-content {
             flex: 0.66; /* 66% del espacio para el texto */
-            padding-right: 1rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+          }
+          
+          .welcome-text-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2rem;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
           }
           
           .welcome-image {
             flex: 0.33; /* 33% del espacio para la imagen */
             max-width: 33%;
-            border-radius: 8px;
+            height: 100%;
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
           }
           
           .welcome-image img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
             transition: transform 0.5s ease;
-            object-fit: cover;
+          }
+          
+          .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1;
           }
           
           .welcome-image:hover img {
@@ -160,26 +207,28 @@ const HomePage = () => {
             margin-top: 2rem;
           }
           
-          .contact-section {
-            align-items: flex-start;
-            padding-left: 50px;
-          }
-          
           @media (max-width: 768px) {
             .welcome-container {
               flex-direction: column;
+              height: 100vh;
             }
             
             .welcome-content {
               flex: 1;
               width: 100%;
-              padding-right: 0;
+              padding: 1rem;
+              margin-bottom: 2rem;
             }
             
             .welcome-image {
               flex: 1;
-              max-width: 80%;
-              margin-top: 2rem;
+              max-width: 100%;
+              height: 50vh;
+              order: -1; /* Coloca la imagen arriba en móviles */
+            }
+            
+            .image-overlay {
+              background: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
             }
             
             .products-container {
@@ -187,9 +236,9 @@ const HomePage = () => {
               align-items: center;
             }
             
-            .welcome-section, .contact-section {
-              padding-left: 20px;
-              padding-right: 20px;
+            .welcome-section {
+              padding-left: 10px;
+              padding-right: 10px;
             }
           }
         `}</style>
